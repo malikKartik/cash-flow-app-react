@@ -1,10 +1,12 @@
 import React from 'react';
 import './App.css';
-
+import Landing from './containers/landing/Landing'
+import Navbar from './components/navbar/Navbar'
 function App() {
   return (
     <div className="App">
-      <h1>Boiler plate</h1>
+      <Navbar></Navbar>
+      <Landing></Landing>
     </div>
   );
 }
