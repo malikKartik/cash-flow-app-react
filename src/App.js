@@ -3,6 +3,8 @@ import './App.css';
 import Landing from './containers/landing/Landing'
 import Navbar from './components/navbar/Navbar'
 import SignIn from './components/signIn/SignIn'
+import SignUp from './components/signUp/SignUp'
+import Dashboard from './containers/dashboard/Dashboard'
 import {
   BrowserRouter as Router,
   Switch,
@@ -10,15 +12,20 @@ import {
 } from "react-router-dom";
 
 function App() {
-  const [showSignIn,setShowSignIn] = React.useState(true)
+  const [showSignIn,setShowSignIn] = React.useState(false)
+  const [showSignUp,setShowSignUp] = React.useState(false)
   return (
     <div className="App">
       <Router>
         <Navbar setShowSignIn={setShowSignIn}></Navbar>
-        {showSignIn?<SignIn setShowSignIn={setShowSignIn}></SignIn>:null}
+        {showSignIn?<SignIn setShowSignIn={setShowSignIn} setShowSignUp={setShowSignUp}></SignIn>:null}
+        {showSignUp?<SignUp setShowSignIn={setShowSignIn} setShowSignUp={setShowSignUp}></SignUp>:null}
         <Switch>
-          <Route path="/">
+          <Route exact path="/">
             <Landing></Landing>
+          </Route>
+          <Route path="/dashboard">
+            <Dashboard></Dashboard>
           </Route>
         </Switch>
       </Router>
