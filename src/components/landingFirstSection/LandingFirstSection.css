@@ -1,21 +1,37 @@
-.container {
+.landing-container {
   height: 100%;
+  display: grid;
+  grid-template-columns: auto auto;
 }
 
-.heading {
-  margin-top: 20vh;
+.landing-heading {
   font-size: 2.5em;
+  font-family: "Roboto";
+  font-weight: bold;
+  margin-top: 15vh;
+}
+
+.landing-subheading {
+  font-size: 1.5em;
   font-family: "Roboto";
 }
 
-.buttons {
+.landing-buttons {
   display: grid;
   grid-template-columns: auto auto;
-  justify-content: center;
-  grid-row-gap: 20px;
+  justify-content: space-evenly;
+  grid-row-gap: 5vh;
+}
+.how {
+  grid-column: 1/3;
+}
+.landing-image {
+  margin-top: 15vh;
+  margin-left: -3vw;
 }
 
-.button {
-  background-color: "#065cd0";
-  color: "white";
+.landing-wave {
+  position: "relative";
+  z-index: -1;
+  margin-top: -18vh;
 }

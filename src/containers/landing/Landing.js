@@ -2,6 +2,8 @@ import React from "react";
 import "./Landing.css";
 import ClearSpace from "../../components/clearSpace/ClearSpace";
 import LandingFirstSection from "../../components/landingFirstSection/LandingFirstSection";
+import FeaturesSection from "../../components/featuresSection/FeaturesSection";
+import OurTeam from "../../components/ourTeam/OurTeam";
 const Landing = () => {
   return (
     <div className="landing">
@@ -10,7 +12,10 @@ const Landing = () => {
         <LandingFirstSection></LandingFirstSection>
       </div>
       <div className="second">
-        <h1>Second section</h1>
+        <FeaturesSection></FeaturesSection>
+      </div>
+      <div className="third">
+        <OurTeam></OurTeam>
       </div>
     </div>
   );
