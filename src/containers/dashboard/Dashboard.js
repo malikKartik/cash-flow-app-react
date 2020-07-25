@@ -1,48 +1,32 @@
 import React from 'react'
 import ClearSpace from '../../components/clearSpace/ClearSpace'
-import AccountBalanceWalletIcon from '@material-ui/icons/AccountBalanceWallet';
-import DoneIcon from '@material-ui/icons/Done';
+import DashboardNav from '../../components/dashboardNav/DashboardNav'
+import Transaction from '../../components/dashboardUtils/transaction'
+
 import './Dashboard.css'
-const Dashbaord = () =>{
+const Dashboard = () =>{
+    const [currentTab,setCurrentTab] = React.useState("transactions")
+
+    const renderTransactionsTabContent = () =>{
+        switch(currentTab){
+            case 'transactions':
+                return [0,0].map(item=>{return(<Transaction></Transaction>)})
+            case 'stransactions':
+                return (<h1>Simplified Transaction</h1>)
+            case 'add':
+                return (<h1>Add transactions</h1>)
+            default:
+                return (<p>Something is not right</p>)
+        }
+    }
     return(
         <div className="dashboard">
             <ClearSpace height="60px"></ClearSpace>
             <div className="dashboard-container">
                 <div className="transactions">
-                    <div className="transaction">
-                        <div className="amount-n-date">
-                            <p>100 Rs <span>8th July 2020</span></p>
-                        </div>
-                        <hr/>
-                        <div className="transaction-details">
-                            <div>
-                                <p>From: Kartik <br/>To: Prerna</p>
-                            </div>
-                            <div className="user-icons-container">
-                                <div className="user-icons">
-                                    <AccountBalanceWalletIcon></AccountBalanceWalletIcon>
-                                    <DoneIcon></DoneIcon>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div className="transaction">
-                        <div className="amount-n-date">
-                            <p>100 Rs <span>8th July 2020</span></p>
-                        </div>
-                        <hr/>
-                        <div className="transaction-details">
-                            <div>
-                                <p>From: Kartik <br/>To: Prerna</p>
-                            </div>
-                            <div className="user-icons-container">
-                                <div className="user-icons">
-                                    <AccountBalanceWalletIcon></AccountBalanceWalletIcon>
-                                    <DoneIcon></DoneIcon>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                    <DashboardNav currentTab={currentTab} setCurrentTab={setCurrentTab}></DashboardNav>
+                    {/* {currentTab==="transactions"?:null} */}
+                    {renderTransactionsTabContent()}
                 </div>
                 <div className="users">
                     <div className="user">
@@ -71,4 +55,4 @@ const Dashbaord = () =>{
     )
 }
 
-export default Dashbaord
+export default Dashboard
