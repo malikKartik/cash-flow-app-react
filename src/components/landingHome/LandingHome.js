@@ -1,16 +1,15 @@
 import React from "react";
-import "./LandingFirstSection.css";
+import "./LandingHome.css";
 import Button from "@material-ui/core/Button";
 import wave from "../../assets/wave2.svg";
 import landing from "../../assets/landing1.png";
-import blob from "../../assets/blob.svg";
 
 const LandingFirstSection = () => {
   return (
     <div>
       <div className="landing-container">
         <div>
-          <img src={landing} class="landing-image"></img>
+          <img src={landing} class="landing-image" alt="Landing"></img>
         </div>
         <div>
           <p class="landing-heading">Cash Flow</p>
@@ -53,7 +52,7 @@ const LandingFirstSection = () => {
         </div>
       </div>
       <div>
-        <img src={wave} className="landing-wave"></img>
+        <img src={wave} className="landing-wave" alt="wave"></img>
       </div>
     </div>
   );

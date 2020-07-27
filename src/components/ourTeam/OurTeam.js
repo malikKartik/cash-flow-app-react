@@ -6,7 +6,7 @@ import kartik from "../../assets/kartik.jpg";
 
 const OurTeam = () => {
   return (
-    <div>
+    <div className="our-teams-container">
       <p className="team-heading">Meet our Team</p>
       <div className="team-card-container">
         <Card

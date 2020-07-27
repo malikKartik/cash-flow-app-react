@@ -1,7 +1,7 @@
 import React from "react";
 import "./Landing.css";
 import ClearSpace from "../../components/clearSpace/ClearSpace";
-import LandingFirstSection from "../../components/landingFirstSection/LandingFirstSection";
+import LandingHome from "../../components/landingHome/LandingHome";
 import FeaturesSection from "../../components/featuresSection/FeaturesSection";
 import OurTeam from "../../components/ourTeam/OurTeam";
 const Landing = () => {
@@ -9,7 +9,7 @@ const Landing = () => {
     <div className="landing">
       <ClearSpace height="60px"></ClearSpace>
       <div className="first">
-        <LandingFirstSection></LandingFirstSection>
+        <LandingHome></LandingHome>
       </div>
       <div className="second">
         <FeaturesSection></FeaturesSection>
