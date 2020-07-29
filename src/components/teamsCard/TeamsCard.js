@@ -7,6 +7,8 @@ import CardContent from "@material-ui/core/CardContent";
 import CardMedia from "@material-ui/core/CardMedia";
 import Button from "@material-ui/core/Button";
 import Typography from "@material-ui/core/Typography";
+import LinkedInIcon from "@material-ui/icons/LinkedIn";
+import GitHubIcon from "@material-ui/icons/GitHub";
 
 const useStyles = makeStyles({
   root: {
@@ -37,10 +39,10 @@ export default function ImgMediaCard(props) {
         </CardContent>
         <CardActions>
           <Button size="small" color="primary">
-            Share
+            <LinkedInIcon></LinkedInIcon>
           </Button>
           <Button size="small" color="primary">
-            Learn More
+            <GitHubIcon></GitHubIcon>
           </Button>
         </CardActions>
       </CardActionArea>

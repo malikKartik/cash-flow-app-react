@@ -41,6 +41,12 @@ html {
   position: relative;
 }
 
+.fourth{
+  height: 100%;
+  width: 100%;
+  background-color: #065cd0;
+  position: relative;
+}
 h1 {
   padding: 0;
   margin: 0;

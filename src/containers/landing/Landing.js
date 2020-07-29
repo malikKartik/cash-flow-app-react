@@ -4,6 +4,7 @@ import ClearSpace from "../../components/clearSpace/ClearSpace";
 import LandingHome from "../../components/landingHome/LandingHome";
 import FeaturesSection from "../../components/featuresSection/FeaturesSection";
 import OurTeam from "../../components/ourTeam/OurTeam";
+import ContactUs from "../../components/contactUs/ContactUs";
 const Landing = () => {
   return (
     <div className="landing">
@@ -16,6 +17,9 @@ const Landing = () => {
       </div>
       <div className="third">
         <OurTeam></OurTeam>
+      </div>
+      <div className="fourth">
+        <ContactUs></ContactUs>
       </div>
     </div>
   );
