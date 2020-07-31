@@ -2,7 +2,7 @@ import React from 'react'
 import ClearSpace from '../../components/clearSpace/ClearSpace'
 import DashboardNav from '../../components/dashboardNav/DashboardNav'
 import Transaction from '../../components/dashboardUtils/transaction'
-
+import AddTransaction from '../../components/dashboardUtils/AddTransaction'
 import './Dashboard.css'
 const Dashboard = () =>{
     const [currentTab,setCurrentTab] = React.useState("transactions")
@@ -14,7 +14,7 @@ const Dashboard = () =>{
             case 'stransactions':
                 return (<h1>Simplified Transaction</h1>)
             case 'add':
-                return (<h1>Add transactions</h1>)
+                return (<AddTransaction></AddTransaction>)
             default:
                 return (<p>Something is not right</p>)
         }
