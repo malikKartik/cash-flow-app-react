@@ -1,0 +1,12 @@
+.landing-features-container .card-container {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  justify-content: space-evenly;
+}
+
+.landing-features-container .features-heading {
+  font-size: 2.5em;
+  font-family: "Roboto";
+  font-weight: bold;
+  margin-top: -5px;
+}
