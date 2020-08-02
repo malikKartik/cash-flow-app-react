@@ -12,6 +12,14 @@ const teams = [
     id: "1235456",
     name: "Second Team",
   },
+  {
+    id: "3214",
+    name: "Bangalore trip"
+  },
+  {
+    id:"12343",
+    name: "Roommates"
+  }
 ];
 
 const MyTeams = () => {
@@ -19,7 +27,7 @@ const MyTeams = () => {
     <div>
       <h1 style={{ marginTop: "20px" }}>My Teams</h1>
       <div class="my-teams-container">
-        <div>
+        <div class="my-teams-container-container">
           {teams.map((item) => {
             return <SimpleCard title={item.name} id={item.id}></SimpleCard>;
           })}
