@@ -1,7 +1,8 @@
 import React from 'react'
 import TextField from '@material-ui/core/TextField';
 import MenuItem from '@material-ui/core/MenuItem';
-
+import ListMembers from './ListMemberAddTrans'
+import Button from '@material-ui/core/Button'
 const splitTypes = [
     {
       value: 'SEIM',
@@ -22,7 +23,7 @@ const splitTypes = [
   ];
 const AddTransactions = () =>{
     const [type, setType] = React.useState('SEIM');
-
+    const [selectedMembers,setSelectedMembers] = React.useState({'Kartik':false,'Prerna':false,'Mike':false});
     const handleChange = (event) => {
         setType(event.target.value);
     };
@@ -46,7 +47,13 @@ const AddTransactions = () =>{
                         </MenuItem>
                     ))}
                 </TextField>
-                
+                {type==="SWIM"||type==="SWEM"?
+                    <ListMembers 
+                        selectedMembers = {selectedMembers} 
+                        setSelectedMembers={setSelectedMembers}>
+                    </ListMembers>
+                :null}
+                <center style={{marginTop:"40px"}}><Button variant="contained" color="primary">Add</Button></center>
             </div>
         </div>
     )
