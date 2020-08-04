@@ -8,7 +8,7 @@
   text-align: left;
 }
 
-.my-teams-container-container{
+.my-teams-container-container {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   grid-gap: 10px;
