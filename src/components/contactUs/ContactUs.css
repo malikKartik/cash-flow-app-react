@@ -4,9 +4,10 @@
 
 .contact-us-container .heading {
   font-size: 2.5em;
-  font-family: "Roboto";
-  font-weight: bold;
+  font-family: Roboto;
+  font-weight: 200;
   margin-top: 10vh;
+  color: white;
 }
 
 .contact-us-container .contact-us-form {

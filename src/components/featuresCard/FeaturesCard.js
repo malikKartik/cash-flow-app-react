@@ -10,6 +10,9 @@ const useStyles = makeStyles({
   root: {
     maxWidth: 345,
   },
+  heading: {
+    color: "#fff",
+  }
 });
 
 export default function ImgMediaCard(props) {
@@ -32,7 +35,7 @@ export default function ImgMediaCard(props) {
           }}
         />
         <CardContent>
-          <Typography gutterBottom variant="h5" component="h2">
+          <Typography gutterBottom variant="h5" component="h2" color="textPrimary">
             {props.title}
           </Typography>
           <Typography variant="body2" color="textSecondary" component="p">
