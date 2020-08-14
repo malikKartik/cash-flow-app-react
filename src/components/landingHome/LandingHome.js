@@ -9,11 +9,11 @@ const LandingFirstSection = () => {
     <div>
       <div className="landing-container">
         <div>
-          <img src={landing} class="landing-image" alt="Landing"></img>
+          <img src={landing} className="landing-image" alt="Landing"></img>
         </div>
         <div>
-          <p class="landing-heading">Cash Flow</p>
-          <p class="landing-subheading">
+          <p className="landing-heading">Cash Flow</p>
+          <p className="landing-subheading">
             Managing cash has never been this easy!!
           </p>
           <div className="landing-buttons">
