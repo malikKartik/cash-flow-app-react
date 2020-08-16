@@ -19,7 +19,6 @@ export default function ImgMediaCard(props) {
 
   return (
     <Card className={classes.root}>
-<<<<<<< HEAD
       <CardMedia
         component="img"
         alt="Contemplative Reptile"
@@ -41,29 +40,6 @@ export default function ImgMediaCard(props) {
       <Button size="small" color="primary">
         <GitHubIcon></GitHubIcon>
       </Button>
-=======
-        <CardMedia
-          component="img"
-          alt="Contemplative Reptile"
-          height="300"
-          image={props.image}
-          title="Contemplative Reptile"
-        />
-        <CardContent>
-          <Typography gutterBottom variant="h5" component="h2">
-            {props.title}
-          </Typography>
-          <Typography variant="body2" color="textSecondary" component="p">
-            {props.description}
-          </Typography>
-        </CardContent>
-          <Button size="small" color="primary">
-            <LinkedInIcon></LinkedInIcon>
-          </Button>
-          <Button size="small" color="primary">
-            <GitHubIcon></GitHubIcon>
-          </Button>
->>>>>>> 8b7af34dba84b977682da657abc8b78cf5b1716e
     </Card>
   );
 }

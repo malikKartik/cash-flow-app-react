@@ -1,8 +1,9 @@
-import React from "react";
+import React, { useEffect } from "react";
 import SimpleCard from "../myTeams/myTeamCard/MyTeamCard";
 import MyInformation from "../myTeams/myInformation/MyInformation";
 import AddTeamCard from "../myTeams/addTeamCard/AddTeamCard";
 import AddTeamPopup from "../myTeams/addTeamPopup/AddTeamPopup";
+import axios from "axios";
 import "./MyTeams.css";
 
 const teams = [
@@ -29,6 +30,19 @@ const MyTeams = () => {
   const handleAddCard = () => {
     setShowCard(!showCard);
   };
+
+  useEffect(() => {
+    axios
+      .get("http://localhost:3001/api/users/getMyTeams", {
+        withCredentials: true,
+      })
+      .then((res) => {
+        console.log(res);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  }, []);
   return (
     <div>
       <h1 style={{ marginTop: "20px" }}>My Teams</h1>
