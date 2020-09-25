@@ -1,60 +1,27 @@
 import React from "react";
 import "./LandingHome.css";
-import Button from "@material-ui/core/Button";
-import wave from "../../assets/wave2.svg";
-import landing from "../../assets/landing1.png";
+import cashflow from "../../assets/android.svg";
 
 const LandingFirstSection = () => {
   return (
-    <div>
-      <div className="landing-container">
-        <div>
-          <img src={landing} className="landing-image" alt="Landing"></img>
-        </div>
-        <div>
-          <p className="landing-heading">Cash Flow</p>
-          <p className="landing-subheading">
-            Managing cash has never been this easy!!
-          </p>
+    <>
+      <div className="cover-image">
+        <img src={cashflow} alt="cash"></img>
+      </div>
+      <div className="landing-home-container">
+        <div className="tilted-bg"></div>
+        <div className="landing-heading">
+          <div className="main-heading">Cash Flow</div>
+          <div className="main-subheading">
+            Handling transactions has never been this easy!
+          </div>
           <div className="landing-buttons">
-            <Button
-              variant="contained"
-              style={{
-                color: "white",
-                backgroundColor: "#065cd0",
-                width: "10vw",
-                marginRight: "20px",
-              }}
-            >
-              Signup
-            </Button>
-            <Button
-              variant="contained"
-              style={{
-                color: "white",
-                backgroundColor: "#065cd0",
-                width: "10vw",
-              }}
-            >
-              Login
-            </Button>
-            <Button
-              variant="contained"
-              style={{
-                color: "white",
-                backgroundColor: "#065cd0",
-              }}
-              className="how"
-            >
-              How it works?
-            </Button>
+            <button className="login">LOGIN</button>
+            <button className="landing-button">SIGNUP</button>
           </div>
         </div>
       </div>
-      <div>
-        <img src={wave} className="landing-wave" alt="wave"></img>
-      </div>
-    </div>
+    </>
   );
 };
 

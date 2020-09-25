@@ -1,6 +1,6 @@
 import React from "react";
 import "./App.css";
-import Landing from "./containers/landing/Landing";
+import LandingPage from "./containers/landingPage/LandingPage";
 import Navbar from "./components/navbar/Navbar";
 import SignIn from "./components/signIn/SignIn";
 import SignUp from "./components/signUp/SignUp";
@@ -37,7 +37,7 @@ function App() {
         ) : null}
         <Switch>
           <Route exact path="/">
-            {loggedIn ? <Redirect to="/dashboard" /> : <Landing />}
+            {loggedIn ? <Redirect to="/dashboard" /> : <LandingPage />}
           </Route>
           <Route path="/dashboard">
             <Dashboard></Dashboard>
