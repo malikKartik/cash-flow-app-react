@@ -1,45 +1,46 @@
-import React from "react";
-import { makeStyles } from "@material-ui/core/styles";
-import Card from "@material-ui/core/Card";
-import CardContent from "@material-ui/core/CardContent";
-import CardMedia from "@material-ui/core/CardMedia";
-import Button from "@material-ui/core/Button";
-import Typography from "@material-ui/core/Typography";
-import LinkedInIcon from "@material-ui/icons/LinkedIn";
-import GitHubIcon from "@material-ui/icons/GitHub";
+import React, { useState } from "react";
+import "./TeamsCard.css";
+import github from "../../assets/github.png";
+import linkedin from "../../assets/linkedin.png";
 
-const useStyles = makeStyles({
-  root: {
-    maxWidth: 345,
-  },
-});
-
-export default function ImgMediaCard(props) {
-  const classes = useStyles();
-
+const TeamsCard = (props) => {
+  const [show, setShow] = useState(false);
+  const onMouseEnter = () => {
+    setShow(true);
+  };
+  const onMouseLeave = () => {
+    setShow(false);
+  };
   return (
-    <Card className={classes.root}>
-      <CardMedia
-        component="img"
-        alt="Contemplative Reptile"
-        height="300"
-        image={props.image}
-        title="Contemplative Reptile"
-      />
-      <CardContent>
-        <Typography gutterBottom variant="h5" component="h2">
-          {props.title}
-        </Typography>
-        <Typography variant="body2" color="textSecondary" component="p">
-          {props.description}
-        </Typography>
-      </CardContent>
-      <Button size="small" color="primary">
-        <LinkedInIcon></LinkedInIcon>
-      </Button>
-      <Button size="small" color="primary">
-        <GitHubIcon></GitHubIcon>
-      </Button>
-    </Card>
+    <>
+      <div
+        className="teams-card"
+        onMouseEnter={onMouseEnter}
+        onMouseLeave={onMouseLeave}
+      >
+        <img className="teams-img" src={props.image}></img>
+        <div
+          className="teams-cover"
+          style={{ display: show ? "block" : "none" }}
+        >
+          <div className="teams-cover-icons">
+            <img
+              src={github}
+              alt="github"
+              style={{ marginRight: "1.5vw", cursor: "pointer" }}
+            ></img>
+            <img
+              src={linkedin}
+              alt="linkedin"
+              style={{ cursor: "pointer" }}
+            ></img>
+          </div>
+        </div>
+      </div>
+      <div className="member-name">{props.name}</div>
+      <div className="member-description">{props.description}</div>
+    </>
   );
-}
+};
+
+export default TeamsCard;
