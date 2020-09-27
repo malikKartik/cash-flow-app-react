@@ -5,6 +5,7 @@ import AddTeamCard from "../myTeams/addTeamCard/AddTeamCard";
 import AddTeamPopup from "../myTeams/addTeamPopup/AddTeamPopup";
 import axios from "axios";
 import "./MyTeams.css";
+import {Link} from 'react-router-dom'
 
 const teams = [
   {
@@ -55,7 +56,7 @@ const MyTeams = () => {
             <AddTeamCard></AddTeamCard>
           </div>
           {teams.map((item) => {
-            return <SimpleCard title={item.name} id={item.id}></SimpleCard>;
+            return <Link to="/transactions"><SimpleCard title={item.name} id={item.id}></SimpleCard></Link>;
           })}
         </div>
         <div>

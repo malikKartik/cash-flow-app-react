@@ -2,6 +2,8 @@ import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import "./Navbar.css";
 import Button from "@material-ui/core/Button";
+import Axios from "axios";
+
 const Navbar = (props) => {
   const [disabledButton, setDisabledButton] = React.useState("Home");
   let listener = null;
@@ -31,11 +33,24 @@ const Navbar = (props) => {
       document.removeEventListener("scroll", listener);
     };
   }, [scrollState]);
+
+  const logoutHandler = () =>{
+    Axios.get("http://localhost:3001/api/users/logout",{
+      withCredentials: true,
+    }).then((data)=>{
+      localStorage.removeItem("loggedIn")
+      props.setLoggedIn(false)
+      console.log(data)
+    }).catch((e)=>{
+      console.log(e)
+    })
+  }
+
   return (
     <div
       className="navbar"
       style={{
-        backgroundColor: scrollState === "amir" ? "#5765bf" : "transparent",
+        backgroundColor: scrollState === "amir" || props.loggedIn ? "#5765bf" : "transparent",
       }}
     >
       <div className="nav-left">
@@ -66,12 +81,21 @@ const Navbar = (props) => {
         </Link>
       </div>
       <div className="nav-right">
+        {props.loggedIn?
         <Button
           className="nav-right-button"
-          onClick={() => props.setShowSignIn(true)}
+          onClick={logoutHandler}
         >
-          Login
+          Logout
         </Button>
+        :
+          <Button
+            className="nav-right-button"
+            onClick={() => props.setShowSignIn(true)}
+          >
+            Login
+          </Button>
+        }
         <div className="nav-avatar"></div>
       </div>
     </div>

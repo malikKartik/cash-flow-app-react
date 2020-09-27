@@ -5,6 +5,7 @@ import Navbar from "./components/navbar/Navbar";
 import SignIn from "./components/signIn/SignIn";
 import SignUp from "./components/signUp/SignUp";
 import Dashboard from "./containers/dashboard/Dashboard";
+import DashboardTransations from './containers/dashboardTransactions/DashboardTransactions'
 import {
   BrowserRouter as Router,
   Switch,
@@ -21,7 +22,8 @@ function App() {
   return (
     <div className="App">
       <Router>
-        <Navbar setShowSignIn={setShowSignIn}></Navbar>
+        {!loggedIn?<Redirect to="/"></Redirect>:null}
+        <Navbar setShowSignIn={setShowSignIn} loggedIn={loggedIn} setLoggedIn={setLoggedIn}></Navbar>
         {showSignIn ? (
           <SignIn
             setLoggedIn={setLoggedIn}
@@ -40,7 +42,10 @@ function App() {
             {loggedIn ? <Redirect to="/dashboard" /> : <LandingPage />}
           </Route>
           <Route path="/dashboard">
-            <Dashboard></Dashboard>
+            <Dashboard loggedIn={loggedIn}></Dashboard>
+          </Route>
+          <Route path="/transactions">
+            <DashboardTransations></DashboardTransations>
           </Route>
         </Switch>
       </Router>

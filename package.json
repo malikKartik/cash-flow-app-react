@@ -20,7 +20,7 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
-  "proxy": "https://cash-flow-node-js.herokuapp.com/",
+  "proxy": "http://locahost:3000",
   "eslintConfig": {
     "extends": "react-app"
   },

@@ -5,11 +5,16 @@ import CloseIcon from "@material-ui/icons/Close";
 import "./SignIn.css";
 import illus from "../../assets/illus1.svg";
 import axios from "axios";
+import {
+  Redirect,
+} from "react-router-dom";
+
 const SignIn = (props) => {
   const [formData, setFormData] = React.useState({
     email: "kartik1@malik.com",
     password: "kartik@1",
   });
+  const [loginSuccess,setLoginSuccess] = React.useState(false)
   const goToSignUp = () => {
     props.setShowSignIn(false);
     props.setShowSignUp(true);
@@ -32,6 +37,9 @@ const SignIn = (props) => {
       .then((res) => {
         console.log(res.data);
         localStorage.setItem('loggedIn', true);
+        setLoginSuccess(true)
+        props.setShowSignIn(false)
+        props.setShowSignUp(false)
       })
       .catch((e) => {
         console.log(e);
@@ -44,6 +52,7 @@ const SignIn = (props) => {
   };
   return (
     <div className="sign-in">
+      {loginSuccess?<Redirect to="/dashboard" />:null}
       <div className="sign-in-inner">
         <div className="sign-in-illustration">
           <img src={illus} alt="sign in illustration" width="80%" />
