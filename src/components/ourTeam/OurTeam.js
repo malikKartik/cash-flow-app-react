@@ -14,14 +14,14 @@ const OurTeam = () => {
             <Card
               image={prerna}
               name="Prerna Budhraja"
-              description="Software Development Engineer"
+              description="I am a software development engineer. I love to make beutiful websites and apps."
             ></Card>
           </div>
           <div>
             <Card
               image={kartik}
               name="Kartik Malik"
-              description="Software Development Engineer"
+              description="I am a software development engineer. I love to make beutiful websites and apps."
             ></Card>
           </div>
         </div>

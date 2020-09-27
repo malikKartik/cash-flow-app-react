@@ -1,44 +1,30 @@
-import React, { useState } from "react";
+import React from "react";
 import "./TeamsCard.css";
 import github from "../../assets/github.png";
 import linkedin from "../../assets/linkedin.png";
 
 const TeamsCard = (props) => {
-  const [show, setShow] = useState(false);
-  const onMouseEnter = () => {
-    setShow(true);
-  };
-  const onMouseLeave = () => {
-    setShow(false);
-  };
   return (
     <>
-      <div
-        className="teams-card"
-        onMouseEnter={onMouseEnter}
-        onMouseLeave={onMouseLeave}
-      >
-        <img className="teams-img" src={props.image}></img>
-        <div
-          className="teams-cover"
-          style={{ display: show ? "block" : "none" }}
-        >
-          <div className="teams-cover-icons">
-            <img
-              src={github}
-              alt="github"
-              style={{ marginRight: "1.5vw", cursor: "pointer" }}
-            ></img>
-            <img
-              src={linkedin}
-              alt="linkedin"
-              style={{ cursor: "pointer" }}
-            ></img>
-          </div>
+      <div className="our-team-card">
+        <div className="our-team-name">{props.name}</div>
+        <div className="our-team-description">{props.description}</div>
+        <div className="our-team-icons">
+          <img
+            src={github}
+            alt="github"
+            style={{ marginRight: "1vw", cursor: "pointer" }}
+          ></img>
+          <img
+            src={linkedin}
+            alt="github"
+            style={{ marginRight: "1vw", cursor: "pointer" }}
+          ></img>
+        </div>
+        <div className="our-team-image">
+          <img src={props.image} alt="team"></img>
         </div>
       </div>
-      <div className="member-name">{props.name}</div>
-      <div className="member-description">{props.description}</div>
     </>
   );
 };
