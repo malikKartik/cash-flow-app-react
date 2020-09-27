@@ -1,48 +1,13 @@
 import React from "react";
-import { makeStyles } from "@material-ui/core/styles";
-import Card from "@material-ui/core/Card";
-import CardActionArea from "@material-ui/core/CardActionArea";
-import CardContent from "@material-ui/core/CardContent";
-import CardMedia from "@material-ui/core/CardMedia";
-import Typography from "@material-ui/core/Typography";
+import "./FeaturesCard.css";
 
-const useStyles = makeStyles({
-  root: {
-    maxWidth: 345,
-  },
-  heading: {
-    color: "#fff",
-  }
-});
-
-export default function ImgMediaCard(props) {
-  const classes = useStyles();
-
+const FeaturesCard = (props) => {
   return (
-    <Card className={classes.root}>
-      <CardActionArea>
-        <CardMedia
-          component="img"
-          alt="Contemplative Reptile"
-          height="80"
-          image={props.image}
-          title="Contemplative Reptile"
-          style={{
-            borderRadius: "50%",
-            width: "80px",
-            marginLeft: "38%",
-            marginTop: "20px",
-          }}
-        />
-        <CardContent>
-          <Typography gutterBottom variant="h5" component="h2" color="textPrimary">
-            {props.title}
-          </Typography>
-          <Typography variant="body2" color="textSecondary" component="p">
-            {props.description}
-          </Typography>
-        </CardContent>
-      </CardActionArea>
-    </Card>
+    <div className="features-card">
+      <div className="card-heading">{props.heading}</div>
+      <div className="card-text">{props.text}</div>
+    </div>
   );
-}
+};
+
+export default FeaturesCard;

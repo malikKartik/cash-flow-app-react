@@ -15,7 +15,6 @@ html {
 }
 .App,
 #root {
-  text-align: center;
   height: 100%;
   width: 100%;
 }
@@ -41,7 +40,7 @@ html {
   position: relative;
 }
 
-.fourth{
+.fourth {
   height: 100%;
   width: 100%;
   background-color: #065cd0;
